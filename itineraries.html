@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FP Selections - Itineraries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Manjari:wght@400&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" crossorigin href="./assets/flag-icons-xnmNUB5v.css">
+</head>
+<body class="bg-white font-body">
+    <!-- Restore Original Sticky Navigation -->
+    <nav class="clean-header top-0 z-50 border-b border-gray-200/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Top Row: Logo and Mobile Toggle -->
+            <div class="flex justify-between items-center h-14 mt-5 mb-5">
+                <!-- Logo Section -->
+                <div class="flex items-center">
+                    <div class="w-45 h-30 mr-3">
+                        <img src="./assets/FP-Selections-transp-DautFMnm.png" alt="FP Selections Logo" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation (Hidden on Mobile) -->
+                <div class="hidden md:flex justify-center py-3">
+                    <div class="flex items-center space-x-12">
+                        <a href="index.html" class="flex items-center space-x-2 text-gray-600 hover:text-brand-orange apple-transition group">
+                            <div class="w-5 h-5 group-hover:scale-110 apple-transition">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-9 9a1 1 0 001.414 1.414L2 12.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-4.586l.293.293a1 1 0 001.414-1.414l-9-9z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-label">Home</span>
+                        </a>
+
+                        <a href="itineraries.html" class="flex items-center space-x-2 text-brand-orange apple-transition group">
+                            <div class="w-5 h-5 group-hover:scale-110 apple-transition">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-heading">Itineraries</span>
+                            <div class="w-1 h-1 bg-brand-orange rounded-full"></div>
+                        </a>
+
+                        <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-brand-orange apple-transition group">
+                            <div class="w-5 h-5 group-hover:scale-110 apple-transition">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-label">Interactive Map</span>
+                        </a>
+
+                        <a href="#" class="flex items-center space-x-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full apple-transition hover:bg-brand-orange/20 group">
+                            <div class="w-5 h-5 group-hover:scale-110 apple-transition">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-heading">Build Itinerary</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button & Get Started Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Get Started Button (Hidden on Mobile) -->
+                    <button class="hidden md:block bg-brand-teal hover:bg-brand-teal/90 text-white px-6 py-2 rounded-full text-sm font-heading apple-transition">
+                        Get Started
+                    </button>
+
+                    <!-- Mobile Menu Toggle with Animation -->
+                    <button id="mobile-menu-toggle" aria-label="Toggle menu" class="menu-btn md:!hidden focus:outline-none">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu with Animation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-2 pb-4 mobile-menu-transition">
+                <div class="flex flex-col space-y-3 bg-white rounded-lg shadow-lg border border-gray-200 p-4">
+                    <a href="index.html" class="flex items-center space-x-3 py-2 px-3 text-gray-600 hover:text-brand-orange font-label rounded-lg hover:bg-gray-50 apple-transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-9 9a1 1 0 001.414 1.414L2 12.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-4.586l.293.293a1 1 0 001.414-1.414l-9-9z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="itineraries.html" class="flex items-center space-x-3 py-2 px-3 text-brand-orange font-heading rounded-lg bg-brand-orange/5">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Itineraries</span>
+                        <div class="w-2 h-2 bg-brand-orange rounded-full ml-auto"></div>
+                    </a>
+                    <div class="pt-2 border-t border-gray-200">
+                        <button class="w-full bg-brand-teal hover:bg-brand-teal/90 text-white py-3 rounded-full font-heading apple-transition">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading text-gray-900 mb-4 leading-tight">
+                Discover Your Next
+                <span class="text-transparent bg-clip-text apple-gradient">Adventure</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 font-body leading-relaxed max-w-3xl mx-auto">
+                Explore carefully curated destinations and itineraries designed for sophisticated travelers seeking authentic experiences.
+            </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex justify-center mb-16">
+            <div class="relative w-full max-w-2xl">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <input 
+                    id="destination-search"
+                    type="text" 
+                    placeholder="Search countries and destinations..." 
+                    class="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-full text-base font-body placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal apple-transition shadow-md hover:shadow-lg"
+                />
+            </div>
+        </div>
+
+        <!-- Europe Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-2xl font-heading text-gray-900 mr-4">Europe</h2>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <span class="text-3xl ml-4">🌍</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-continent="europe">
+                <!-- France -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="france">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-fr flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">France</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Experience the romance of Paris, the elegance of the French Riviera, and the charm of Provence's countryside.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Paris</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Nice</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Lyon</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+12 more</span>
+                    </div>
+                </div>
+
+                <!-- Italy -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="italy">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-it flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Italy</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">From ancient Rome to Renaissance Florence, discover Italy's rich history, art, and world-renowned cuisine.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Rome</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Florence</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Venice</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+15 more</span>
+                    </div>
+                </div>
+
+                <!-- Spain -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="spain">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-es flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Spain</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Vibrant culture, stunning architecture, and passionate flamenco await in Spain's diverse regions.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Madrid</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Barcelona</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Seville</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">+18 more</span>
+                    </div>
+                </div>
+
+                <!-- Greece -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="greece">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-gr flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Greece</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Ancient history meets stunning islands in this Mediterranean paradise rich with mythology and culture.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Athens</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Santorini</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Mykonos</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">+8 more</span>
+                    </div>
+                </div>
+
+                <!-- Germany -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="germany">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-de flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Germany</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Rich history, fairy-tale castles, and vibrant cities showcase Germany's cultural diversity.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Berlin</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Munich</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Hamburg</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+20 more</span>
+                    </div>
+                </div>
+
+                <!-- United Kingdom -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="uk">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-gb flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">United Kingdom</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Royal heritage, iconic landmarks, and charming countryside define this historic island nation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">London</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Edinburgh</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Manchester</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+25 more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asia Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-2xl font-heading text-gray-900 mr-4">Asia</h2>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <span class="text-3xl ml-4">🏯</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-continent="asia">
+                <!-- Japan -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="japan">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-jp flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Japan</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Discover the perfect blend of ancient traditions and cutting-edge technology in the Land of the Rising Sun.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Tokyo</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Kyoto</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Osaka</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+25 more</span>
+                    </div>
+                </div>
+
+                <!-- Thailand -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="thailand">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-th flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Thailand</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Experience golden temples, pristine beaches, and incredible street food in the jewel of Southeast Asia.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Bangkok</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Phuket</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Chiang Mai</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+20 more</span>
+                    </div>
+                </div>
+
+                <!-- South Korea -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="south-korea">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-kr flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">South Korea</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Modern metropolises, ancient palaces, and K-culture create an exciting blend of old and new.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Seoul</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Busan</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Jeju</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">+12 more</span>
+                    </div>
+                </div>
+
+                <!-- Singapore -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="singapore">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-sg flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Singapore</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">A modern city-state where East meets West, offering world-class dining and stunning architecture.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Marina Bay</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Sentosa</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Chinatown</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">+8 more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Americas Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-2xl font-heading text-gray-900 mr-4">Americas</h2>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <span class="text-3xl ml-4">🗽</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-continent="americas">
+                <!-- United States -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="usa">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-us flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">United States</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">From bustling cities to natural wonders, experience the diversity of American landscapes and culture.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">New York</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Los Angeles</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Miami</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+45 more</span>
+                    </div>
+                </div>
+
+                <!-- Brazil -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="brazil">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-br flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Brazil</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Carnival spirit, Amazon rainforest, and beautiful beaches make Brazil a vibrant South American jewel.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Rio de Janeiro</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">São Paulo</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Salvador</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+22 more</span>
+                    </div>
+                </div>
+
+                <!-- Canada -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="canada">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-ca flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Canada</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Vast wilderness, multicultural cities, and friendly locals await in Canada's stunning landscapes.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Toronto</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Vancouver</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Montreal</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">+18 more</span>
+                    </div>
+                </div>
+
+                <!-- Mexico -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="mexico">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-mx flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Mexico</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Rich ancient heritage, vibrant culture, and stunning beaches create Mexico's unique charm.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Mexico City</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Cancun</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Guadalajara</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">+30 more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Africa Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-2xl font-heading text-gray-900 mr-4">Africa</h2>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <span class="text-3xl ml-4">🦁</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-continent="africa">
+                <!-- Morocco -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="morocco">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-ma flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Morocco</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Imperial cities, bustling souks, and the magic of the Sahara Desert create an enchanting North African experience.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Marrakech</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Casablanca</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Fes</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+10 more</span>
+                    </div>
+                </div>
+
+                <!-- South Africa -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="south-africa">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-za flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">South Africa</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Safari adventures, wine valleys, and vibrant cities showcase the diverse beauty of the Rainbow Nation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Cape Town</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Johannesburg</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Durban</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+8 more</span>
+                    </div>
+                </div>
+
+                <!-- Kenya -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="kenya">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-ke flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Kenya</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Witness the Great Migration, explore pristine beaches, and experience the warmth of East African culture.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Nairobi</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Mombasa</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">Masai Mara</span>
+                        <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-xs font-label rounded-full">+6 more</span>
+                    </div>
+                </div>
+
+                <!-- Egypt -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="egypt">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-eg flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Egypt</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Ancient pyramids, the Nile River, and timeless monuments tell the story of one of humanity's greatest civilizations.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Cairo</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Luxor</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">Aswan</span>
+                        <span class="px-2 py-1 bg-brand-dark/10 text-brand-dark text-xs font-label rounded-full">+7 more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oceania Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-2xl font-heading text-gray-900 mr-4">Oceania</h2>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <span class="text-3xl ml-4">🏄‍♂️</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-continent="oceania">
+                <!-- Australia -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="australia">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-au flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">Australia</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">From the Outback's red heart to pristine beaches, Australia offers adventure and unique wildlife encounters.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Sydney</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Melbourne</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">Brisbane</span>
+                        <span class="px-2 py-1 bg-brand-cream/20 text-brand-orange text-xs font-label rounded-full">+12 more</span>
+                    </div>
+                </div>
+
+                <!-- New Zealand -->
+                <div class="country-card bg-white rounded-2xl p-6 apple-card apple-transition hover:shadow-xl cursor-pointer group" data-country="new-zealand">
+                    <div class="flex items-center mb-4">
+                        <span class="fi fi-nz flag-icon mr-4"></span>
+                        <h3 class="text-lg font-heading text-gray-900 group-hover:text-brand-orange apple-transition">New Zealand</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 font-body mb-4">Stunning landscapes, adventure sports, and Maori culture create an unforgettable Pacific Island experience.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Auckland</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Wellington</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">Queenstown</span>
+                        <span class="px-2 py-1 bg-brand-teal/10 text-brand-teal text-xs font-label rounded-full">+8 more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200/50">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-45 h-30 mr-3">
+                            <img src="./assets/FP-Selections-transp-DautFMnm.png" alt="FP Selections Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6 max-w-md font-body">
+                        Discover extraordinary destinations through intelligent planning, expert curation, and personalized experiences tailored for sophisticated travelers.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="text-sm font-heading text-gray-900 mb-3">Stay Updated</h4>
+                        <div class="flex space-x-3">
+                            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent apple-transition font-body" />
+                            <button class="bg-brand-orange hover:bg-brand-orange/90 text-white px-6 py-2 rounded-lg text-sm font-label apple-transition">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-heading text-gray-900 mb-4">Travel Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Destination Guides</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Hotel Recommendations</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Custom Itineraries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-heading text-gray-900 mb-4">Explore</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Popular Destinations</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Travel Stories</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Photo Galleries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-heading text-gray-900 mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Contact</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-orange text-sm apple-transition font-body">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200">
+                <span class="text-sm text-gray-500 font-body">Available worldwide</span>
+                <p class="text-sm text-gray-500 font-label">© 2025 FP Selections. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality (from original navbar)
+            const menuBtn = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                menuBtn.classList.toggle('open', isMenuOpen);
+                
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.offsetHeight;
+                    mobileMenu.classList.remove('mobile-menu-transition');
+                } else {
+                    mobileMenu.classList.add('mobile-menu-transition');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', function(event) {
+                if (isMenuOpen && !menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    toggleMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('destination-search');
+            const countryCards = document.querySelectorAll('.country-card');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                countryCards.forEach(card => {
+                    const countryName = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const cities = Array.from(card.querySelectorAll('.px-2')).map(city => city.textContent.toLowerCase());
+                    
+                    const matchesSearch = searchTerm === '' || 
+                        countryName.includes(searchTerm) || 
+                        description.includes(searchTerm) ||
+                        cities.some(city => city.includes(searchTerm));
+                    
+                    if (matchesSearch) {
+                        card.style.display = 'block';
+                        card.style.opacity = '1';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Hide/show continent sections based on visible cards
+                document.querySelectorAll('section').forEach(section => {
+                    const continentCards = section.querySelectorAll('.country-card');
+                    const visibleCards = Array.from(continentCards).filter(card => card.style.display !== 'none');
+                    
+                    if (visibleCards.length === 0 && searchTerm !== '') {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = 'block';
+                    }
+                });
+            });
+
+            // Country card click handlers
+            countryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const country = this.dataset.country;
+                    console.log(`Navigating to ${country} details page`);
+                    // Here you would implement navigation to country detail page
+                    // window.location.href = `country-details.html?country=${country}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
