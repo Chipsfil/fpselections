@@ -1,0 +1,182 @@
+/* @import "tailwindcss"; */
+@import "tailwindcss";
+
+@layer components {
+  .apple-transition {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .clean-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  /* Apple-style blur effect */
+  .apple-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  /* Apple button hover effect */
+  .apple-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Apple card shadow */
+  .apple-card {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Apple-style gradient */
+  .apple-gradient {
+    background: linear-gradient(135deg, #E17900 0%, #00ACC9 100%);
+  }
+
+  /* Font weight classes */
+  .font-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-body {
+    font-family: 'Manjari', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+  }
+}
+
+@theme {
+  --color-brand-orange: #E17900;
+  --color-brand-cream: #FFDEBB;
+  --color-brand-teal: #00ACC9;
+  --color-brand-dark: #003842;
+}
+
+
+/* Hamburger menu animation styles */
+.menu-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px;
+}
+
+.menu-btn .bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #4A5568;
+  /* gray-600 */
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  left: 0;
+}
+
+.menu-btn .bar1 {
+  top: 0;
+}
+
+.menu-btn .bar2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-btn .bar3 {
+  bottom: 0;
+}
+
+/* Animation states when menu is open */
+.menu-btn.open .bar1 {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.menu-btn.open .bar2 {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-btn.open .bar3 {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Mobile menu slide animation */
+.mobile-menu-transition {
+  transition: all 0.3s ease-in-out;
+  transform-origin: top;
+}
+
+.mobile-menu-transition.hidden {
+  transform: scaleY(0) translateY(-20px);
+  opacity: 0;
+}
+
+.mobile-menu-transition:not(.hidden) {
+  transform: scaleY(1) translateY(0);
+  opacity: 1;
+}
+
+/* Disable transitions on page load */
+.preload * {
+  transition: none !important;
+  animation: none !important;
+}
+
+.flag-icon {
+  width: 32px !important;
+  height: 24px !important;
+  display: inline-block;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Flag icon styling for search results */
+.flag-icon-search {
+  width: 24px !important;
+  height: 18px !important;
+  display: inline-block;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+
+/* Search dropdown enhancements */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for dropdown */
+#search-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+#search-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#search-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+#search-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Data Editor</title>
+    <link rel="stylesheet" href="css/editor-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Travel Data Editor</h1>
+            <div class="header-actions">
+                <button id="saveBtn" class="btn btn-primary">Save All Changes</button>
+                <button id="addCountryBtn" class="btn btn-success">Add New Country</button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <div id="loading">Loading travel data...</div>
+            <div id="countries-container" style="display: none;"></div>
+        </main>
+    </div>
+
+    <!-- Add Country Modal -->
+    <div id="addCountryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Country</h2>
+            <form id="addCountryForm">
+                <div class="form-group">
+                    <label for="countryKey">Country Key (e.g., "france"):</label>
+                    <input type="text" id="countryKey" required>
+                </div>
+                <div class="form-group">
+                    <label for="countryName">Country Name:</label>
+                    <input type="text" id="countryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="continent">Continent:</label>
+                    <select id="continent" required>
+                        <option value="">Select Continent</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Africa">Africa</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">South America</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flag">Flag CSS Class:</label>
+                    <input type="text" id="flag" placeholder="e.g., fi-fr">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="heroImage">Hero Image:</label>
+                    <div class="image-input-group">
+                        <input type="text" id="heroImage" placeholder="Click 'Browse Images' or enter path manually" readonly>
+                        <button type="button" class="btn btn-secondary" onclick="editor.showImageUpload('heroImage')">Browse Images</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Country</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add City Modal -->
+    <div id="addCityModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New City</h2>
+            <form id="addCityForm">
+                <input type="hidden" id="cityCountryKey">
+                <div class="form-group">
+                    <label for="citySlug">City Slug:</label>
+                    <input type="text" id="citySlug" required>
+                </div>
+                <div class="form-group">
+                    <label for="cityName">City Name:</label>
+                    <input type="text" id="cityName" required>
+                </div>
+                <div class="form-group">
+                    <label for="cityDescription">Description:</label>
+                    <textarea id="cityDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cityImage">Image:</label>
+                    <div class="image-input-group">
+                        <input type="text" id="cityImage" placeholder="Click 'Browse Images' or enter path manually" readonly>
+                        <button type="button" class="btn btn-secondary" onclick="editor.showImageUpload('cityImage')">Browse Images</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add City</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Guide Modal -->
+    <div id="addGuideModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Guide</h2>
+            <form id="addGuideForm">
+                <input type="hidden" id="guideCountryKey">
+                <input type="hidden" id="guideCitySlug">
+                <div class="form-group">
+                    <label for="guideTitle">Guide Title:</label>
+                    <input type="text" id="guideTitle" required placeholder="e.g., Best Temples in Kyoto">
+                </div>
+                <div class="form-group">
+                    <label for="guideDescription">Description (optional):</label>
+                    <textarea id="guideDescription" rows="2" placeholder="Brief description of the guide"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="guideDuration">Duration (optional):</label>
+                    <input type="text" id="guideDuration" placeholder="e.g., Half day, 2-3 hours">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Guide</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Itinerary Modal -->
+    <div id="addItineraryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Itinerary</h2>
+            <form id="addItineraryForm">
+                <input type="hidden" id="itineraryCountryKey">
+                <div class="form-group">
+                    <label for="itineraryTitle">Itinerary Title:</label>
+                    <input type="text" id="itineraryTitle" required placeholder="e.g., Tokyo and Surroundings">
+                </div>
+                <div class="form-group">
+                    <label for="itineraryCities">Cities (one per line):</label>
+                    <textarea id="itineraryCities" rows="4" required placeholder="Tokyo&#10;Kyoto&#10;Osaka"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="itineraryDuration">Duration (optional):</label>
+                    <input type="text" id="itineraryDuration" placeholder="e.g., 7 days, 2 weeks">
+                </div>
+                <div class="form-group">
+                    <label for="itineraryDescription">Description (optional):</label>
+                    <textarea id="itineraryDescription" rows="3" placeholder="Brief description of this itinerary"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Itinerary</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Transport Modal -->
+    <div id="addTransportModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Transport Mode</h2>
+            <form id="addTransportForm">
+                <input type="hidden" id="transportCountryKey">
+                <div class="form-group">
+                    <label for="transportType">Transport Type:</label>
+                    <input type="text" id="transportType" required placeholder="e.g., High-speed Rail, Domestic Flights">
+                </div>
+                <div class="form-group">
+                    <label for="transportDetails">Details:</label>
+                    <textarea id="transportDetails" rows="3" required placeholder="Description of this transport mode"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="transportImage">Image:</label>
+                    <div class="image-input-group">
+                        <input type="text" id="transportImage" placeholder="Click 'Browse Images' or enter path manually" readonly>
+                        <button type="button" class="btn btn-secondary" onclick="editor.showImageUpload('transportImage')">Browse Images</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="transportCost">Cost Information (optional):</label>
+                    <input type="text" id="transportCost" placeholder="e.g., From $50, Budget-friendly">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Transport Mode</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Upload Modal -->
+    <div id="imageUploadModal" class="modal">
+        <div class="modal-content image-modal">
+            <span class="close">&times;</span>
+            <h2>Select or Upload Image</h2>
+            
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h3>Upload New Image</h3>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <span class="upload-icon">📁</span>
+                        <p>Drag & drop an image here or click to browse</p>
+                        <small>Supported formats: JPG, PNG, GIF, WebP (Max 5MB)</small>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+                <div id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span id="progressText">Uploading...</span>
+                </div>
+            </div>
+            
+            <!-- Image Gallery Section -->
+            <div class="gallery-section">
+                <h3>Previously Uploaded Images</h3>
+                <div id="imageGallery" class="image-gallery">
+                    <!-- Images will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Selected Image Preview -->
+            <div id="selectedImagePreview" class="selected-preview" style="display: none;">
+                <h3>Selected Image:</h3>
+                <img id="previewImage" src="" alt="Preview">
+                <p id="selectedImagePath"></p>
+                <button class="btn btn-primary" onclick="editor.confirmImageSelection()">Use This Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
