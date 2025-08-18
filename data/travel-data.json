@@ -1,0 +1,343 @@
+{
+  "japan": {
+    "name": "Japan",
+    "continent": "Asia",
+    "flag": "fi-jp",
+    "description": "Discover the perfect blend of ancient traditions and cutting-edge technology in Japan, from bustling metropolises to serene temples.",
+    "heroImage": "/images/japan-hero.jpg",
+    "cities": [
+      {
+        "slug": "tokyo",
+        "name": "Tokyo",
+        "description": "Japan's capital, a dynamic blend of tradition and ultramodern life.",
+        "image": "/images/cities/tokyo.jpg",
+        "guides": [
+          {
+            "title": "Tokyo Highlights"
+          },
+          {
+            "title": "Best Neighborhoods in Tokyo"
+          }
+        ]
+      },
+      {
+        "slug": "kyoto",
+        "name": "Kyoto",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/kyoto.jpg",
+        "guides": [
+          {
+            "title": "Kyoto's Top Temples"
+          }
+        ]
+      },
+      {
+        "slug": "osaka",
+        "name": "Osaka",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/osaka.jpg",
+        "guides": [
+          {
+            "title": "Osaka's Top Temples"
+          }
+        ]
+      },
+      {
+        "slug": "sapporo",
+        "name": "Sapporo",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "images/cities/sapporo.jpg",
+        "guides": [
+          {
+            "title": "Sapporo's Top Temples"
+          }
+        ]
+      },
+      {
+        "slug": "hiroshima",
+        "name": "Hiroshima",
+        "description": "Che bella Hiroshima",
+        "image": "/images/1755340286406-desmond-tawiah-GKArFMrr3ps-unsplash.jpg",
+        "guides": [
+          {
+            "title": "Alla scoperta delle rovina della bomba nucleare"
+          }
+        ]
+      }
+    ],
+    "itineraries": {
+      "title": "Japan Itineraries",
+      "description": "Explore Japan with our curated itineraries, from city highlights to cultural deep dives.",
+      "items": [
+        {
+          "title": "Tokyo up",
+          "cities": [
+            "Tokyo",
+            "Sapporo"
+          ]
+        },
+        {
+          "title": "Tokyo down",
+          "cities": [
+            "Tokyo",
+            "Osaka",
+            "Kyoto",
+            "Hiroshima"
+          ]
+        }
+      ]
+    },
+    "transport": {
+      "title": "Getting Around Japan",
+      "description": "Japan has world-famous high-speed rail, scenic local trains, and convenient domestic flights.",
+      "modes": [
+        {
+          "type": "Shinkansen (Bullet Train)",
+          "details": "High-speed train network connecting major cities.",
+          "image": "images/train.jpg"
+        },
+        {
+          "type": "Domestic Flights",
+          "details": "Frequent flights between big cities and remote islands.",
+          "image": "images/plane.jpg"
+        }
+      ]
+    }
+  },
+  "italy": {
+    "name": "Italy",
+    "continent": "Europe",
+    "flag": "fi-it",
+    "description": "Discover the perfect blend of ancient traditions and cutting-edge technology in Japan, from bustling metropolises to serene temples.",
+    "heroImage": "/images/italy-hero.jpg",
+    "cities": [
+      {
+        "slug": "napoli",
+        "name": "Napoli",
+        "description": "Japan's capital, a dynamic blend of tradition and ultramodern life.",
+        "image": "/images/cities/napoli.jpg",
+        "guides": [
+          {
+            "title": "Napoli Highlights"
+          },
+          {
+            "title": "Best Neighborhoods in Napoli"
+          }
+        ]
+      },
+      {
+        "slug": "rome",
+        "name": "Rome",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/rome.jpg",
+        "guides": [
+          {
+            "title": "Rome's Top Churches"
+          }
+        ]
+      }
+    ],
+    "transport": {
+      "title": "Getting Around Italy",
+      "description": "Italy has high-speed rail, scenic local trains, and convenient domestic flights.",
+      "modes": [
+        {
+          "type": "Frecciarossa",
+          "details": "High-speed train network connecting major cities.",
+          "image": "/images/frecciarossa"
+        },
+        {
+          "type": "Domestic Flights",
+          "details": "Frequent flights between big cities and remote islands.",
+          "image": "/images/plane-ita.jpg"
+        }
+      ]
+    }
+  },
+  "singapore": {
+    "name": "Singapore",
+    "continent": "Asia",
+    "flag": "fi-sg",
+    "description": "A modern city-state of vibrant culture, spectacular architecture, and world-class cuisine.",
+    "heroImage": "/images/singapore-hero.jpg",
+    "cities": [
+      {
+        "slug": "singapore-city",
+        "name": "Singapore City",
+        "description": "The cosmopolitan heart of the nation, a blend of tradition and modernity.",
+        "image": "/images/cities/singapore-city.jpg",
+        "guides": [
+          {
+            "title": "Singapore Essentials"
+          }
+        ]
+      }
+    ]
+  },
+  "vietnam": {
+    "name": "Vietnam",
+    "continent": "Asia",
+    "flag": "fi-vn",
+    "description": "Discover the perfect blend of ancient traditions and cutting-edge technology in Japan, from bustling metropolises to serene temples.",
+    "heroImage": "/images/vietnam.jpg",
+    "cities": [
+      {
+        "slug": "ho-chi-minh-city",
+        "name": "Ho Chi Minh City",
+        "description": "Japan's capital, a dynamic blend of tradition and ultramodern life.",
+        "image": "/images/cities/ho-chi-minh-city.jpg",
+        "guides": [
+          {
+            "title": "Napoli Highlights"
+          },
+          {
+            "title": "Best Neighborhoods in Napoli"
+          }
+        ]
+      },
+      {
+        "slug": "hanoi",
+        "name": "Hanoi",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/hanoi.jpg",
+        "guides": [
+          {
+            "title": "Rome's Top Churches"
+          }
+        ]
+      },
+      {
+        "slug": "da-nang",
+        "name": "Da Nang",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/da-nang.jpg",
+        "guides": [
+          {
+            "title": "Rome's Top Churches"
+          }
+        ]
+      },
+      {
+        "slug": "ninh-binh",
+        "name": "Ninh Binh",
+        "description": "Historic temples, traditional tea houses and cultural heritage.",
+        "image": "/images/cities/ninh-binh.jpg",
+        "guides": [
+          {
+            "title": "Rome's Top Churches"
+          }
+        ]
+      }
+    ],
+    "transport": {
+      "title": "Getting Around Italy",
+      "description": "Italy has high-speed rail, scenic local trains, and convenient domestic flights.",
+      "modes": [
+        {
+          "type": "Frecciarossa",
+          "details": "High-speed train network connecting major cities.",
+          "image": "/images/frecciarossa"
+        },
+        {
+          "type": "Domestic Flights",
+          "details": "Frequent flights between big cities and remote islands.",
+          "image": "/images/plane-ita.jpg"
+        }
+      ]
+    },
+    "itineraries": {
+      "title": "Vietnam Itineraries",
+      "description": "Explore Vietnam with our curated itineraries.",
+      "items": [
+        {
+          "title": "From South to North",
+          "cities": [
+            "Ho Chi Minh City",
+            "Da Nang",
+            "Ninh Binh",
+            "Ha long Bay",
+            "Hanoi"
+          ]
+        }
+      ]
+    }
+  },
+  "france": {
+    "name": "France",
+    "continent": "Europe",
+    "flag": "fi-fr",
+    "description": "Bella la francia",
+    "heroImage": "",
+    "cities": [
+      {
+        "slug": "marseilles",
+        "name": "Marseilles",
+        "description": "Hello",
+        "image": "",
+        "guides": []
+      },
+      {
+        "slug": "nice",
+        "name": "Nice",
+        "description": "Sul mar",
+        "image": "",
+        "guides": []
+      }
+    ],
+    "itineraries": {
+      "title": "France Itineraries",
+      "description": "Explore France with our curated itineraries.",
+      "items": [
+        {
+          "title": "Côte Azur",
+          "cities": [
+            "Nice",
+            "Monaco",
+            "Marseilles"
+          ]
+        }
+      ]
+    }
+  },
+  "spain": {
+    "name": "Spagna",
+    "continent": "Europe",
+    "flag": "fi-es",
+    "description": "Interroad",
+    "heroImage": "/images/1755170570181-sam-williams-UuGAw6nF0Vw-unsplash.jpg",
+    "cities": [
+      {
+        "slug": "madrid",
+        "name": "Madrid",
+        "description": "Bella city",
+        "image": "/images/1755170614835-jorge-fernandez-salas-ChSZETOal-I-unsplash.jpg",
+        "guides": []
+      },
+      {
+        "slug": "cordoba",
+        "name": "Cordoba",
+        "description": "Spacca la mesquita",
+        "image": "",
+        "guides": []
+      },
+      {
+        "slug": "barcelona",
+        "name": "Barcelona",
+        "description": "Bella città",
+        "image": "/images/1755510838269-logan-armstrong-hVhfqhDYciU-unsplash.jpeg",
+        "guides": [
+          {
+            "title": "The best of Gaudì"
+          }
+        ]
+      },
+      {
+        "slug": "seville",
+        "name": "Seville",
+        "description": "Through the city",
+        "image": "/images/1755513041752-tania-mousinho-dMi3pqiqhsw-unsplash.jpeg",
+        "guides": []
+      }
+    ]
+  }
+}
